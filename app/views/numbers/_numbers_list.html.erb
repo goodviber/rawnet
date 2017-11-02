@@ -1,0 +1,11 @@
+<% @numbers.each do |number| %>
+   <%= number.value.humanize %><br>
+<% end %>
+<div><%= will_paginate @numbers %></div>
+
+<div>Select
+  <%= form_tag numbers_path, method: :get, id: 'limit_form', remote: true do %>
+   <%= select_tag :limit, options_for_select([5, 10, 15, 20, 50, 100, 500, 1000],
+    selected: params[:limit] || 20) %> <!-- this is the default -->
+  <% end %> numbers per page
+</div>

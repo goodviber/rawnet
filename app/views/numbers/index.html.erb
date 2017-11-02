@@ -1,0 +1,14 @@
+<div id="numbers_list">
+  <%= render partial: 'numbers_list' %>
+</div>
+
+<script type="text/javascript" >
+
+  $(function(){
+    $('#limit').change(
+      function() {
+       $('#limit_form').submit();
+      });
+  });
+
+</script>
